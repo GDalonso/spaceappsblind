@@ -31,3 +31,18 @@ setup(
    description='Flask-Compress',
 )
 
+setup(
+   name='micawber',
+   version='x',
+   description='micawber',
+)
+setup(
+   name='beautifulsoup4',
+   version='x',
+   description='beautifulsoup4',
+)
+setup(
+   name='pymongo',
+   version='x',
+   description='pymongo',
+)
