@@ -5,7 +5,7 @@ Built with Flask, MongoDB hosted in MLab with authentication, interface to creat
 
 Post can be written in Markdown, for convenience.
 
-Live version in [Umobiteam](http://blog.umobiteam.com/)
+Live version in [Anie](http://portalanie.herokuapp.com)
 
 ### Files tree
 
@@ -29,7 +29,7 @@ Blog Pages
 
     editarpublicação.html : Form to edit app posts.
 
-    flash.html :
+    flash.html : login success or error notification.
 
     index.html : Initial page with posts, record if the user have some visual disability in his first access.
 
@@ -43,7 +43,7 @@ Blog Pages
 
     postview.html: Post visualization page.
 
-    select_type.html :
+    select_type.html : Asks the user to inform if is visually impaired.
 
     template.html : The base template of the application.
 
