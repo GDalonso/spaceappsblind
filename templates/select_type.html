@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zxx">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title> {{ titulo }}</title>
+
+	<link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+	<link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/init.css') }}">
+
+  </head>
+
+  <body>
+
+    <div class="site-wrapper">
+
+      <div class="site-wrapper-inner">
+
+        <div class="cover-container">
+          <div class="inner cover">
+            <h1 class="cover-heading">Olá, eu sou a Anie</h1>
+            <p class="lead">Eu sou uma plataforma de noticias relacionadas ao espaço, vida na terra e tecnologias acessiveis.
+				Para que isso seja possível eu me adapto para o seu tipo de necessidade.</p>
+            <p class="lead">Me diga, em qual categoria você se encaixa?</p>
+            <form>
+              <button type="submit" href="{{ url_for('index') }}" name="type_user" value="blind" class="btn btn-lg btn-info">Sou deficiente visual</button>
+              <button type="submit" href="{{ url_for('index') }}" name="type_user" value="not_blind" class="btn btn-lg btn-light">Não sou deficiente visual</button>
+            </form>
+          </div>
+
+          <div class="mastfoot">
+            <div class="inner">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="../../dist/js/bootstrap.min.js"></script>
+    <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+{% extends "template.html" %}
+{% block conteudo %}
+
+			<!-- start banner Area -->
+			<section class="banner-area-map relative" id="home">
+				<div class="slider"><div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner" role="listbox">
+						<div class="carousel-item active" style="background-color:#015786; max-height:350px">
+							<div class="carousel-caption d-md-block">
+								<p class="text-description">
+								Seja bem-vindo a página de publicações
+				              </p>
+							</div>
+						</div>
+					</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Start blog Area -->
+			<section class="gallery-area section-gap" id="blog">
+				<div class="container">
+					<div class="row justify-content-center">
+						<div class="col-md-8 pb-30 header-text">
+							<h1 class="">Como funciona?</h1>
+						</div>
+					</div>
+					<div class="row">
+						<div class="single-blog col-lg-12 col-md-12">
+							<center>
+							<h2 class="text-home">
+								{% if blind %}
+								<a>Aqui você encontrará as principais publicações sobre o mundo astronômico, de forma totalmente acessível. Utilize o teclado para navegar pelas publicações, e deixe conosco a comunicação da notícia para você.
+Divirta-se em sua exploração!</a>
+								{% else %}
+								<a>Aqui você encontrará as principais publicações sobre o mundo astronômico, de forma totalmente acessível. Apenas navege pelas notícias e deixe conosco a comunicação da notícia para você.
+Divirta-se em sua exploração!</a>
+								{% endif %}
+							</h2>
+							</center>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- end blog Area -->
+			<!-- End banner Area -->	
+
+		{# Seção sobre #}
+		<section class="about-section section margin-tb-30" id="about">
+			{% for post in posts %}
+
+			<div class="container position-relative margin-b-50 container-post" >
+				<div class="card mb-3">
+					<a href="{{url_for('postview', _postid=post._id)}}">
+					<img class="card-img-top" src="{{ post.imagemPost }}" alt="Card image cap">
+
+					<div class="card-body ">
+						<h3 class="card-title">{{ post.nomePost }}</h3>
+				  	</div>
+					</a>
+				</div>
+			</div>
+			{% endfor %}
+
+		</section>
+
+
+
+{% endblock conteudo %}

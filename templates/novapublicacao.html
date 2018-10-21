@@ -1,0 +1,35 @@
+<!--Form that creates a new post, extended from template-->
+{% extends "template.html" %}
+{% block conteudo %}
+    <div class="container margin-tb-30" >
+        <form action="{{ url_for('createpost') }}" method="post">
+            <fieldset>
+              <div class="form-group" style="margin = 20px">
+                <label class="text-title-form" for="nomePost">Título</label>
+                <input type="text" id="nomePost" name="nomePost" class="form-control" required>
+              </div>
+              <div class="form-group" style="margin = 20px">
+                <label class="text-title-form">Conteudo publicação</label>
+              </div>
+
+                <textarea id="conteudoPost" class="text" style="max-width: 90%; border:1px solid; border-color: #C8C8C8" cols="200" rows ="20" name="conteudoPost" ></textarea>
+              <div class="form-group">
+                  <label class="text-title-form">Audiodescrição</label>
+                  <div class="form-group">
+                      <!--<input type="file" class="form-control-file" id="exampleFormControlFile1">-->
+                <label class="text-title-form" for="descPost">AudioDescrição</label>
+                <input type="text" id="descPost" name="descPost" class="form-control" required>
+              </div>
+              <div class="form-group">
+                  <label class="text-title-form" for="categoriaPost">Categorias</label>
+                  <input type="text" id="categoriaPost" name="categoriaPost" class="form-control" required>
+              </div>
+              <div class="form-group">
+                    <label class="text-title-form" for="imagemPost">Link da imagem que aparecerá no ínicio da página</label>
+                    <input type="text" id="imagemPost" name="imagemPost" class="form-control" required>
+              </div>
+            <p><button class="btn btn-outline-primary btn-block" type="submit">Publicar</button></p>
+            </fieldset>
+        </form>
+    </div>
+{% endblock %}

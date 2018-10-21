@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<head>
+		<!-- Mobile Specific Meta -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<!-- Favicon-->
+		<link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.ico') }}">
+		<!-- Author Meta -->
+		<meta name="author" content="Anie">
+		<!-- Meta Description -->
+		<meta name="description" content="">
+		<!-- Meta Keyword -->
+		<meta name="keywords" content="">
+		<!-- meta character set -->
+		<meta charset="UTF-8">
+		<!-- Site Title -->
+		<title>{{ titulo }}</title>
+
+    </head>
+    <body>
+        <!-- Start Header Area -->
+        <header class="default-header">
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="header-top d-flex justify-content-between align-items-center">
+                        <div class="main-menubar d-flex align-items-center">
+                            <nav>
+                                <a href="{{ url_for('index') }}">Ínicio</a>
+                            </nav>
+                            <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% block conteudo %}
+        {% endblock conteudo %}
+
+        {# Footer #}
+        <footer class="footer-area">
+            <div>Contato: </div>
+        </footer>
+
+
+    </body>
+</html>

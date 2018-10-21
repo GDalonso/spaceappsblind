@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zxx" class="no-js">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		<link rel="shortcut icon" href="">
+		<meta name="author" content="PlantSat">
+		<meta name="description" content="">
+		<meta name="keywords" content="">
+		<meta charset="UTF-8">
+		<title>{{ titulo }}</title>
+
+        <link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/linearicons.css') }}">
+        <link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/magnific-popup.css') }}">
+        <link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+        <link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+        <link type= "text/css" rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+
+    </head>
+    <body>
+        {% if not blind %}
+        <header class="default-header">
+            <div class="container">
+                <div class="header-wrap">
+                    <div class="header-top d-flex justify-content-between align-items-center">
+                        <div class="logo">
+                            <a href="{{ url_for('index') }}"><img src="{{ url_for('static', filename='img/logo.png') }}" alt=""></a>
+                        </div>
+                        <div class="main-menubar d-flex align-items-center">
+                            <nav class="hide">
+                                <a href="{{ url_for('index') }}">Ínicio</a>
+                                {% if not user %}
+                                <a href="{{ url_for('formlogin') }}">Login</a>
+                                <a href="{{ url_for('formcreateuser') }}">Cadastrar</a>
+                                {% else %}
+                                <a href="{{ url_for('formcreatepost') }}">Nova publicação</a>
+                                <a href="{{ url_for('logout') }}">Logout</a>
+                                {% endif %}
+                            </nav>
+                            <div class="menu-bar"><span class="lnr lnr-menu"></span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+        {% endif %}
+    {% block conteudo %}
+    {% endblock conteudo %}
+        {% if titulo != "Resultado" %}
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row footer-bottom d-flex justify-content-between">
+                    <p class="col-lg-8 col-sm-12 footer-text m-0 text-white">Copyright &copy; <script>document.write(new Date().getFullYear());</script> All rights reserved</a></p>
+
+                </div>
+            </div>
+        </footer>
+        {% endif %}
+
+        <script src="{{ url_for('static', filename='js/vendor/jquery-2.2.4.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/vendor/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.ajaxchimp.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.nice-select.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery.sticky.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/parallax.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/simple-lightbox.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/jquery-ui.js') }}"></script>
+
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!--login Form, extended from template-->
+{% extends "template.html" %}
+{% block conteudo %}
+
+{# Caixa #}
+<div class="limiter">
+  <div class="container-contact100">
+    <div class="wrap-contact100" id="next">
+      {# Título #}
+      <div class="login100-form-title">
+        <span class="contact100-form-title">Seja bem-vindo</span>
+      </div>
+      {# Formulario que redireciona para rotar autenticate #}
+              <form method="POST" action="{{ url_for('authenticatelogin') }}">
+            <input type="hidden" name="proxima" value="{{ proxima or url_for('index') }}">
+            <p><label>Username:</label> <input class="form-control" type="text" name="usuario" required></p>
+            <p><label>Password:</label> <input class="form-control" type="password" name="senha" required></p>
+            {% include "flash.html" %}
+            <p><button class="btn btn-outline-primary btn-block" type="submit">Log in</button></p>
+        </form>
+    </div>
+  </div>
+</div>
+
+{% endblock conteudo %}

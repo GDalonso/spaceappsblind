@@ -1,0 +1,20 @@
+{% extends "template.html" %}
+{% block conteudo %}
+	{# Seção sobre #}
+	<section class="about-section section margin-tb-30" id="about">
+		{% for post in posts %}
+		<div class="container position-relative margin-b-50 container-post" >
+			<div class="card mb-3">
+				<a href="{{url_for('postview', _postid=post._id)}}">
+				<img class="card-img-top" src="{{ post.imagemPost }}" alt="Card image cap">
+				<div class="card-body ">
+					<h3 class="card-title">{{ post.nomePost }}</h3>
+					<a class="btn btn-primary" href="{{url_for('editar', _postid=post._id)}}">Editar</a>
+					<a class="btn btn-success" href="{{url_for('createpost', post)}}">Aprovar</a>
+				</div>
+				</a>
+			</div>
+		</div>
+		{% endfor %}
+	</section>
+{% endblock conteudo %}
